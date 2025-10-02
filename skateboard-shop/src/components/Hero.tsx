@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <div className="bg-gray-800 text-white text-center py-20 px-4">
+    <div className="bg-gray-800 text-white text-center py-20 px-4 pt-24">
       <h1 className="text-5xl font-bold mb-4">
         Welcome to Decked Out
       </h1>
