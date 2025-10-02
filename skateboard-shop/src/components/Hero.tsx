@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ArrowRight } from 'lucide-react'; // Import the icon for the button
 import heroImage from '../assets/background3.jpg';
 
