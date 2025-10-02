@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Search, Sun, ShoppingCart, Menu, X } from 'lucide-react';
 
 function Header() {
