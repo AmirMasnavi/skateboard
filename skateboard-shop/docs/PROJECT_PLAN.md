@@ -1,4 +1,7 @@
-# Skateboard Shop MVP Plan (Mellow Skateboard Edition)
+# Mellow Skateboard: The Rolex MVP Roadmap
+
+## Core Philosophy
+Every feature must feel **high-performance** and **intentional**. We are building a "Digital Gallery," not just a shop. No fluff, only "Smart Rolex" execution.
 
 ## Tech Stack
 - **Framework:** React 19 (Vite)
@@ -8,33 +11,35 @@
 
 ## Progress Summary
 - [x] **Project Cleanup:** Root directory and redundant node_modules resolved.
-- [x] **Source of Truth Docs:** `docs/PROJECT_PLAN.md`, `docs/DESIGN_SYSTEM.md`, and `docs/BRAND_VOICE.md` created.
-- [x] **Brand Assets:** Mellow Skateboard logos imported and tracked.
-- [x] **Phase 0 (Branding):** Logo in header, Hero branding, and basic wiring complete.
-- [x] **Phase 1 (Foundation):** Dark mode enabled and basic refinement complete.
+- [x] **Source of Truth Docs:** `docs/PROJECT_PLAN.md`, `docs/DESIGN_SYSTEM.md`, `docs/BRAND_VOICE.md`, and `docs/IDENTITY.md` created.
+- [x] **Phase 0 & 1:** Foundation, Theme Toggle, and Header Logo complete.
+- [x] **Bug Fix:** Brands page dark mode hover contrast resolved.
 
-## To-Do List (Execute one by one)
+## To-Do List (High-Impact Execution)
 
-### Phase 2: Navigation & Multi-Page Layout
+### Phase 2: Brand Identity & Routing (The "Smart Rolex" UI)
 - [ ] **2.1 Routing Setup:** Install `react-router-dom` and set up the main router in `App.tsx`.
-- [ ] **2.2 New Pages:** 
-    - [ ] Create `src/pages/Shop.tsx` (Full product list).
-    - [ ] Create `src/pages/NewArrivals.tsx` (Recently added items).
-    - [ ] Create `src/pages/Brands.tsx` (Brand partner showcase).
-    - [ ] Create `src/pages/About.tsx` (Full Mellow story).
-- [ ] **2.3 About Section (Home):** Add a minimalist "Our Story" section to `src/pages/Home.tsx` based on `BRAND_VOICE.md`.
-- [ ] **2.4 Footer Integration:** Create `src/components/Footer.tsx` with Instagram link and Mellow info.
+- [ ] **2.2 The "Mellow Tape" (Replaces New Arrivals):**
+    - [ ] Create `src/pages/MellowTape.tsx`.
+    - [ ] Implement a horizontal, auto-scrolling gallery of the latest drops with a subtle film-grain overlay.
+- [ ] **2.3 The Editorial Shop:**
+    - [ ] Create `src/pages/Shop.tsx`.
+    - [ ] Use an offset, asymmetrical grid layout (not a generic grid).
+    - [ ] Hide prices and buttons until hover (Gallery Mode).
+- [ ] **2.4 The Story (About Page):**
+    - [ ] Create `src/pages/About.tsx`.
+    - [ ] Use high-impact typography and large lifestyle imagery. Focus on "The Community."
+- [ ] **2.5 The "Instagram Ghost" Footer:** 
+    - [ ] Create `src/components/Footer.tsx`.
+    - [ ] Minimalist design featuring only the handle and a small "latest from the street" image grid.
 
-### Phase 3: Shopping Cart State
-- [ ] **3.1 Create Cart Context:** Create `src/context/CartContext.tsx` (cartItems, addToCart, removeFromCart).
-- [ ] **3.2 Provide Context:** Wrap app in `src/main.tsx` with `CartProvider`.
-- [ ] **3.3 Dynamic Header:** Update `Header.tsx` to display real cart count.
+### Phase 3: The Setup & Cart (High Performance)
+- [ ] **3.1 Cart Context:** Create `src/context/CartContext.tsx` with high-performance state management.
+- [ ] **3.2 The "Complete Your Ride" (In-Product Feature):** Add intelligent truck/wheel suggestions when viewing a deck.
+- [ ] **3.3 The Rolex Cart Drawer:**
+    - [ ] Build `src/components/CartDrawer.tsx` with buttery-smooth animations.
+    - [ ] Minimalist item list and a single-click "Checkout" flow.
 
-### Phase 4: Adding to Cart & UI
-- [ ] **4.1 Interactive Product Cards:** Add "Add to Cart" button (hover effect).
-- [ ] **4.2 Create Drawer Component:** Build `src/components/CartDrawer.tsx` (slide-in).
-- [ ] **4.3 Toggle Logic:** Link Header cart icon to toggle `CartDrawer`.
-
-### Phase 5: Refinement & Deployment
-- [ ] **5.1 Feedback UI:** Add "Success" toast for cart additions.
-- [ ] **5.2 Deployment:** Final build and deploy to Netlify.
+### Phase 4: Refinement & Deployment
+- [ ] **4.1 Typography Update:** Audit all fonts to ensure they match the "Zine" style (Bold All-Caps headings).
+- [ ] **4.2 Deployment:** Final build and deploy to Netlify.

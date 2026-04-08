@@ -26,9 +26,9 @@ const Brands = () => {
             {partners.map((brand) => (
               <div
                 key={brand.name}
-                className="bg-white dark:bg-[#121212] p-10 flex flex-col gap-3 group hover:bg-[#FCEE09] transition-colors duration-300 cursor-pointer"
+                className="bg-white dark:bg-[#121212] p-10 flex flex-col gap-3 group hover:bg-[#FCEE09] transition-all duration-300 cursor-pointer"
               >
-                <span className="text-[#999999] text-xs uppercase tracking-widest group-hover:text-[#121212] transition-colors">
+                <span className="text-[#999999] text-xs uppercase tracking-widest group-hover:text-[#121212]/80 transition-colors">
                   {brand.founded}
                 </span>
                 <h2 className="text-2xl font-bold uppercase tracking-wider text-[#121212] dark:text-[#F5F5F5] group-hover:text-[#121212] transition-colors">
