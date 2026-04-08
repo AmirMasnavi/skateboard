@@ -4,7 +4,7 @@ import heroImage from '../assets/background3.jpg';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center text-center">
+    <section id="hero" className="relative h-screen flex items-center justify-center text-center">
       {/* Background Image and Overlay */}
       <div className="absolute top-0 left-0 w-full h-full">
         <img

@@ -24,16 +24,15 @@ function Header() {
     <>
       <header className="bg-white dark:bg-[#121212] text-[#121212] dark:text-[#F5F5F5] p-4 fixed top-0 left-0 w-full z-50 border-b border-gray-200 dark:border-[#333333] transition-colors duration-300">
         <div className="container mx-auto flex justify-between items-center">
-          {/* ... (The top part of your header remains the same) ... */}
-          <a href="#">
+          <a href="#hero">
             <img src={logo} alt="Mellow Skateboard" className="h-10 w-auto object-contain" />
           </a>
           <nav className="hidden md:flex">
-             <ul className="flex space-x-8 items-center">
-              <li><a href="#" className="hover:text-[#FCEE09] transition-colors text-sm uppercase font-semibold">Shop</a></li>
-              <li><a href="#" className="hover:text-[#FCEE09] transition-colors text-sm uppercase font-semibold">New Arrivals</a></li>
-              <li><a href="#" className="hover:text-[#FCEE09] transition-colors text-sm uppercase font-semibold">Brands</a></li>
-              <li><a href="#" className="hover:text-[#FCEE09] transition-colors text-sm uppercase font-semibold">About</a></li>
+            <ul className="flex space-x-8 items-center">
+              <li><a href="#shop" className="hover:text-[#FCEE09] transition-colors text-sm uppercase font-semibold">Shop</a></li>
+              <li><a href="#shop" className="hover:text-[#FCEE09] transition-colors text-sm uppercase font-semibold">New Arrivals</a></li>
+              <li><a href="#shop" className="hover:text-[#FCEE09] transition-colors text-sm uppercase font-semibold">Brands</a></li>
+              <li><a href="#about" className="hover:text-[#FCEE09] transition-colors text-sm uppercase font-semibold">About</a></li>
             </ul>
           </nav>
           <div className="flex items-center space-x-4">
@@ -64,10 +63,10 @@ function Header() {
         >
           <nav>
             <ul className="flex flex-col items-center space-y-8">
-              <li><a href="#" onClick={toggleMobileMenu} className="hover:text-[#FCEE09] transition-colors text-3xl uppercase font-semibold">Shop</a></li>
-              <li><a href="#" onClick={toggleMobileMenu} className="hover:text-[#FCEE09] transition-colors text-3xl uppercase font-semibold">New Arrivals</a></li>
-              <li><a href="#" onClick={toggleMobileMenu} className="hover:text-[#FCEE09] transition-colors text-3xl uppercase font-semibold">Brands</a></li>
-              <li><a href="#" onClick={toggleMobileMenu} className="hover:text-[#FCEE09] transition-colors text-3xl uppercase font-semibold">About</a></li>
+              <li><a href="#shop" onClick={toggleMobileMenu} className="hover:text-[#FCEE09] transition-colors text-3xl uppercase font-semibold">Shop</a></li>
+              <li><a href="#shop" onClick={toggleMobileMenu} className="hover:text-[#FCEE09] transition-colors text-3xl uppercase font-semibold">New Arrivals</a></li>
+              <li><a href="#shop" onClick={toggleMobileMenu} className="hover:text-[#FCEE09] transition-colors text-3xl uppercase font-semibold">Brands</a></li>
+              <li><a href="#about" onClick={toggleMobileMenu} className="hover:text-[#FCEE09] transition-colors text-3xl uppercase font-semibold">About</a></li>
             </ul>
           </nav>
         </div>
