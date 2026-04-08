@@ -19,10 +19,10 @@ const Hero = () => {
       {/* Foreground Content */}
       <div className="relative z-10 px-4">
         <h1 className="text-6xl md:text-8xl font-bold text-white uppercase tracking-wider">
-          Built for the Bold
+          STAY MELLOW
         </h1>
         <p className="text-xl md:text-2xl text-white mt-4 mb-8 max-w-2xl mx-auto">
-          Discover Our Fall '25 Collection
+          For the love of the ride. Built for the community.
         </p>
         <a
           href="#"

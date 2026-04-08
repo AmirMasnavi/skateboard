@@ -11,7 +11,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ imageUrl, brand, name, price 
   return (
     <div className="group relative cursor-pointer">
       {/* Image Container */}
-      <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-800">
+      <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-800 transition-colors duration-300">
         <img
           src={imageUrl}
           alt={name}

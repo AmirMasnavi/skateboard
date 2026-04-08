@@ -4,7 +4,7 @@ import FeaturedProducts from './components/FeaturedProducts';
 
 function App() {
   return (
-    <div className="bg-[#121212]"> {/* <-- Add background color here */}
+    <div className="bg-white dark:bg-[#121212] transition-colors duration-300">
       <Header />
       <main>
         <Hero />

@@ -18,9 +18,9 @@ const mockProducts = [
 
 const FeaturedProducts = () => {
   return (
-    <div className="bg-[#121212] py-16">
+    <div className="bg-white dark:bg-[#121212] py-16 transition-colors duration-300">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-[#F5F5F5] uppercase mb-10">
+        <h2 className="text-3xl font-bold text-center text-[#121212] dark:text-[#F5F5F5] uppercase mb-10 transition-colors duration-300">
           Best Sellers
         </h2>
         
