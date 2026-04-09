@@ -1,21 +1,45 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import santaCruzDeck from '../assets/deck-santacruz.jpg';
-import powellDeck    from '../assets/deck-powell.jpg';
-import elementDeck   from '../assets/deck-element2.jpg';
-import bakerDeck     from '../assets/deck-baker.jpg';
+import santaCruzDeck  from '../assets/deck-santacruz.jpg';
+import powellDeck     from '../assets/deck-powell.jpg';
+import elementDeck    from '../assets/deck-element2.jpg';
+import bakerDeck      from '../assets/deck-baker.jpg';
+import santaCruzDeck2 from '../assets/deck-santacruz2.jpg';
+import powellDeck2    from '../assets/deck-powell2.jpg';
+import elementDeck2   from '../assets/deck-element3.jpg';
+import bakerDeck2     from '../assets/deck-baker2.jpg';
 
-const drops = [
-  { brand: 'Santa Cruz',     name: 'Classic Dot',  image: santaCruzDeck },
-  { brand: 'Powell-Peralta', name: 'Ripper',        image: powellDeck    },
-  { brand: 'Element',        name: 'Seal',          image: elementDeck   },
-  { brand: 'Baker',          name: 'Brand Logo',    image: bakerDeck     },
+const volumes = [
+  {
+    vol: '01',
+    year: 2025,
+    drops: [
+      { brand: 'Santa Cruz',     name: 'Classic Dot', image: santaCruzDeck  },
+      { brand: 'Powell-Peralta', name: 'Ripper',       image: powellDeck     },
+      { brand: 'Element',        name: 'Seal',         image: elementDeck    },
+      { brand: 'Baker',          name: 'Brand Logo',   image: bakerDeck      },
+    ],
+  },
+  {
+    vol: '02',
+    year: 2026,
+    drops: [
+      { brand: 'Santa Cruz',     name: 'Wave Dot',    image: santaCruzDeck2 },
+      { brand: 'Powell-Peralta', name: 'Flight',      image: powellDeck2    },
+      { brand: 'Element',        name: 'Reserve',     image: elementDeck2   },
+      { brand: 'Baker',          name: 'Black Label', image: bakerDeck2     },
+    ],
+  },
 ];
 
-// Duplicated for seamless infinite loop
-const galleryItems = [...drops, ...drops];
-
 const MellowTape = () => {
+  const [volIndex, setVolIndex] = useState(volumes.length - 1); // default: latest
+  const current = volumes[volIndex];
+
+  // Duplicate drops for seamless infinite loop
+  const galleryItems = [...current.drops, ...current.drops];
+
   return (
     <div className="pt-20 min-h-screen bg-[#121212] text-[#F5F5F5] flex flex-col">
 
@@ -24,16 +48,33 @@ const MellowTape = () => {
         <div className="flex justify-between items-start">
 
           <div>
-            <p className="text-[#999999] text-xs uppercase tracking-widest mb-4">
-              Vol. 01 — {new Date().getFullYear()}
-            </p>
+            <div className="flex items-center gap-4 mb-4">
+              <p className="text-[#999999] text-xs uppercase tracking-widest">
+                Vol. {current.vol} — {current.year}
+              </p>
+              {/* Volume switcher */}
+              <div className="flex items-center gap-2">
+                {volumes.map((v, i) => (
+                  <button
+                    key={v.vol}
+                    onClick={() => setVolIndex(i)}
+                    className={`text-[10px] uppercase tracking-widest px-2 py-0.5 border transition-colors duration-300 ${
+                      volIndex === i
+                        ? 'border-[#FCEE09] text-[#FCEE09]'
+                        : 'border-[#333333] text-[#333333] hover:border-[#999999] hover:text-[#999999]'
+                    }`}
+                  >
+                    {v.vol}
+                  </button>
+                ))}
+              </div>
+            </div>
             <h1 className="text-[clamp(4rem,14vw,10rem)] font-bold uppercase leading-none tracking-tighter text-[#F5F5F5]">
               Mellow<br />Tape
             </h1>
           </div>
 
           <div className="text-right flex flex-col items-end gap-3 pt-2">
-            {/* REC indicator */}
             <span className="flex items-center gap-2 text-[#999999] text-xs uppercase tracking-widest">
               <span className="w-2 h-2 rounded-full bg-[#FCEE09] animate-pulse" />
               Playing
@@ -42,7 +83,7 @@ const MellowTape = () => {
               the latest drop.
             </p>
             <p className="text-[#FCEE09] text-xs uppercase tracking-widest">
-              {drops.length} items this drop
+              {current.drops.length} items this drop
             </p>
           </div>
 
@@ -55,7 +96,7 @@ const MellowTape = () => {
           {galleryItems.map((item, i) => (
             <div
               key={i}
-              className="relative flex-shrink-0 w-64 md:w-80 h-[65vh] overflow-hidden group cursor-pointer"
+              className="relative flex-shrink-0 w-64 md:w-80 h-[65vh] overflow-hidden group"
             >
               <img
                 src={item.image}

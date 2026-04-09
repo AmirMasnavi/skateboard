@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import bg1 from '../assets/background.jpg';
 import bg2 from '../assets/background2.jpg';
 import bg3 from '../assets/background3.jpg';
@@ -37,7 +38,15 @@ const dispatches = [
   },
 ];
 
+const allTags = ['All', ...Array.from(new Set(dispatches.map((d) => d.tag)))];
+
 const Journal = () => {
+  const [activeTag, setActiveTag] = useState('All');
+
+  const filtered = activeTag === 'All'
+    ? dispatches
+    : dispatches.filter((d) => d.tag === activeTag);
+
   return (
     <div className="pt-20 bg-[#121212] min-h-screen">
 
@@ -51,8 +60,25 @@ const Journal = () => {
             Journal
           </h1>
           <span className="text-[#FCEE09] text-xs uppercase tracking-[0.3em] mb-3">
-            {dispatches.length} dispatches
+            {filtered.length} dispatches
           </span>
+        </div>
+
+        {/* Tag filter row */}
+        <div className="flex flex-wrap gap-6 pt-8">
+          {allTags.map((tag) => (
+            <button
+              key={tag}
+              onClick={() => setActiveTag(tag)}
+              className={`text-xs uppercase tracking-[0.3em] pb-1 border-b transition-colors duration-300 ${
+                activeTag === tag
+                  ? 'text-[#FCEE09] border-[#FCEE09]'
+                  : 'text-[#999999] border-transparent hover:text-[#F5F5F5]'
+              }`}
+            >
+              {tag}
+            </button>
+          ))}
         </div>
       </div>
 
@@ -70,7 +96,7 @@ const Journal = () => {
       {/* Dispatches list */}
       <div className="container mx-auto px-4 py-16">
         <div className="flex flex-col">
-          {dispatches.map((d) => (
+          {filtered.map((d) => (
             <div
               key={d.id}
               className="group border-t border-[#333333] py-10 cursor-pointer hover:border-[#FCEE09] transition-colors duration-500"

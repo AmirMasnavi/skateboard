@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Custom cursor (pointer devices only) ──────────────── */
+@media (pointer: fine) {
+  * { cursor: none !important; }
+}
+
 /* ─── Marquee ─────────────────────────────────────────── */
 @keyframes marquee {
   from { transform: translateX(0); }

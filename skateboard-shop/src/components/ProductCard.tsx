@@ -5,11 +5,12 @@ interface ProductCardProps {
   brand: string;
   name: string;
   price: number;
+  onClick?: () => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ imageUrl, brand, name, price }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ imageUrl, brand, name, price, onClick }) => {
   return (
-    <div className="group relative cursor-pointer overflow-hidden h-full">
+    <div className="group relative overflow-hidden h-full" onClick={onClick}>
       {/* Image */}
       <div className="w-full h-full overflow-hidden bg-[#1a1a1a]">
         <img

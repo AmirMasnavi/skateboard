@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/logo-mellow-2.jpg';
 
@@ -13,8 +13,12 @@ const navLinks = [
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+  const isActive = (to: string) =>
+    to === '/' ? location.pathname === '/' : location.pathname.startsWith(to);
 
   return (
     <>
@@ -29,7 +33,14 @@ function Header() {
             <ul className="flex space-x-8 items-center">
               {navLinks.map(({ label, to }) => (
                 <li key={to}>
-                  <Link to={to} className="hover:text-[#FCEE09] transition-colors text-sm uppercase font-semibold tracking-widest">
+                  <Link
+                    to={to}
+                    className={`text-sm uppercase font-semibold tracking-widest pb-1 border-b transition-colors duration-300 ${
+                      isActive(to)
+                        ? 'text-[#FCEE09] border-[#FCEE09]'
+                        : 'border-transparent hover:text-[#FCEE09] hover:border-[#FCEE09]/40'
+                    }`}
+                  >
                     {label}
                   </Link>
                 </li>

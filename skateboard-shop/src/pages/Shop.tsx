@@ -44,7 +44,7 @@ const Shop = () => {
         </div>
       </div>
 
-      <FeaturedProducts />
+      <FeaturedProducts activeFilter={active} />
 
     </div>
   );
