@@ -4,6 +4,7 @@ import bg2 from '../assets/background2.jpg';
 import bg3 from '../assets/background3.jpg';
 
 const dispatches = [
+  // Field Report — 3 entries
   {
     id: '001',
     date: 'Apr 2026',
@@ -13,6 +14,24 @@ const dispatches = [
     tag: 'Field Report',
   },
   {
+    id: '005',
+    date: 'Dec 2025',
+    location: 'New York, NY',
+    headline: 'The Brooklyn banks don\'t sleep.',
+    body: "Midnight. Flood lights from the bridge. A kid no older than sixteen doing back-to-back 5-0s like the ledge owed him something. We didn't ask his name. Didn't need to.",
+    tag: 'Field Report',
+  },
+  {
+    id: '008',
+    date: 'Sep 2025',
+    location: 'Portland, OR',
+    headline: 'Rain doesn\'t stop the locals.',
+    body: "Burnside under the bridge. Always wet. Always someone there. Built by the community in 1990 and the city never touched it. That's the contract.",
+    tag: 'Field Report',
+  },
+
+  // Dispatch — 3 entries
+  {
     id: '002',
     date: 'Mar 2026',
     location: 'Barcelona, Spain',
@@ -20,6 +39,24 @@ const dispatches = [
     body: "Before the crowds. Before the tourists. Just the slap of wheels on marble and the sound of pigeons clearing out. Some places belong to you only at certain hours.",
     tag: 'Dispatch',
   },
+  {
+    id: '006',
+    date: 'Nov 2025',
+    location: 'Berlin, Germany',
+    headline: 'Tempelhof has no rules.',
+    body: "A decommissioned airport turned public park. No security. No fences. Miles of smooth tarmac under open sky. Berlin keeps giving the city back to the people.",
+    tag: 'Dispatch',
+  },
+  {
+    id: '009',
+    date: 'Aug 2025',
+    location: 'Melbourne, Australia',
+    headline: 'The skatepark they built overnight.',
+    body: "The council said no. The locals said nothing — they just showed up with concrete and tools on a Saturday. By Sunday afternoon, there was a bowl. By Monday, it had a name.",
+    tag: 'Dispatch',
+  },
+
+  // Signal — 3 entries
   {
     id: '003',
     date: 'Feb 2026',
@@ -29,6 +66,24 @@ const dispatches = [
     tag: 'Signal',
   },
   {
+    id: '007',
+    date: 'Oct 2025',
+    location: 'Seoul, South Korea',
+    headline: 'Han River. Saturday. Everyone.',
+    body: "The riverside path stretches for kilometers. Families, couples, delivery bikes — and woven through it all, a loose formation of skaters moving like water. No destination. Just the city.",
+    tag: 'Signal',
+  },
+  {
+    id: '010',
+    date: 'Jul 2025',
+    location: 'Lagos, Nigeria',
+    headline: 'A scene that built itself.',
+    body: "No budget. No skatepark. Smooth plazas outside government buildings on public holidays. A generation that learned from YouTube and taught each other everything else.",
+    tag: 'Signal',
+  },
+
+  // Archive — 3 entries
+  {
     id: '004',
     date: 'Jan 2026',
     location: 'London, UK',
@@ -36,9 +91,25 @@ const dispatches = [
     body: "They tried to tear it down in 2014. The community buried it in signatures and noise. Now it's a monument. Some things you can't pave over.",
     tag: 'Archive',
   },
+  {
+    id: '011',
+    date: 'Nov 2025',
+    location: 'San Francisco, CA',
+    headline: 'EMB is gone. The footage isn\'t.',
+    body: "Embarcadero. The late 80s. Gonz, Jovontae, Henry. A plaza so central to skate history that they named a generation after it. The marble is still there. So are the tricks.",
+    tag: 'Archive',
+  },
+  {
+    id: '012',
+    date: 'Jun 2025',
+    location: 'Malmö, Sweden',
+    headline: 'The city that said yes first.',
+    body: "In 1990, Malmö built the first city-funded skatepark in Europe. Not as an afterthought — as infrastructure. A bet on youth culture that paid off in culture, tourism, and identity.",
+    tag: 'Archive',
+  },
 ];
 
-const allTags = ['All', ...Array.from(new Set(dispatches.map((d) => d.tag)))];
+const allTags = ['All', 'Field Report', 'Dispatch', 'Signal', 'Archive'];
 
 const Journal = () => {
   const [activeTag, setActiveTag] = useState('All');
@@ -60,7 +131,7 @@ const Journal = () => {
             Journal
           </h1>
           <span className="text-[#FCEE09] text-xs uppercase tracking-[0.3em] mb-3">
-            {filtered.length} dispatches
+            {filtered.length} {filtered.length === 1 ? 'dispatch' : 'dispatches'}
           </span>
         </div>
 
@@ -99,7 +170,7 @@ const Journal = () => {
           {filtered.map((d) => (
             <div
               key={d.id}
-              className="group border-t border-[#333333] py-10 cursor-pointer hover:border-[#FCEE09] transition-colors duration-500"
+              className="group border-t border-[#333333] py-10 hover:border-[#FCEE09] transition-colors duration-500"
             >
               <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-0">
 
@@ -133,7 +204,9 @@ const Journal = () => {
 
           <div className="border-t border-[#333333] pt-6 flex justify-between">
             <span className="text-[#333333] text-xs uppercase tracking-widest">End of dispatch</span>
-            <span className="text-[#333333] text-xs uppercase tracking-widest">Vol. 01</span>
+            <span className="text-[#333333] text-xs uppercase tracking-widest">
+              {filtered.length} / {dispatches.length} entries
+            </span>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <FeaturedProducts />
+      <FeaturedProducts limit={5} showVol01={true} />
 
       {/* Our Story Section - Zine Spread Layout */}
       <section className="bg-[#121212] py-32 overflow-hidden border-t border-[#333333]">
