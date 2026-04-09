@@ -4,23 +4,25 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
-import NewArrivals from './pages/NewArrivals';
+import MellowTape from './pages/MellowTape';
 import Brands from './pages/Brands';
 import About from './pages/About';
+import Journal from './pages/Journal';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="bg-white dark:bg-[#121212] transition-colors duration-300">
+      <div className="bg-[#121212]">
         <Header />
         <ScrollToTop />
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/new-arrivals" element={<NewArrivals />} />
-            <Route path="/brands" element={<Brands />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/"             element={<Home />}       />
+            <Route path="/shop"         element={<Shop />}       />
+            <Route path="/mellow-tape"  element={<MellowTape />} />
+            <Route path="/brands"       element={<Brands />}     />
+            <Route path="/about"        element={<About />}      />
+            <Route path="/journal"      element={<Journal />}    />
           </Routes>
         </main>
         <Footer />
