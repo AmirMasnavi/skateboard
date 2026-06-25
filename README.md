@@ -1,57 +1,50 @@
 # Skateboard E-Commerce Platform 🛹
 
+[![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-> **Live Demo:** [https://sktbrd.netlify.app/](https://sktbrd.netlify.app/)
+> **🔗 Live Demo:** **[staymellow.netlify.app](https://staymellow.netlify.app/)**
 
 ## 📖 Project Overview
-This project is a modern, responsive E-Commerce application designed for a niche market (Skateboarding). It focuses on delivering a high-performance user experience (UX) through component-based architecture and strict type safety.
 
-The goal is to demonstrate a clean **Frontend Architecture** that consumes RESTful data, manages complex application state (Shopping Cart, Filters), and provides a seamless checkout flow.
-
-## 🚧 Project Status: Active Development
-This application is currently in the **Alpha** phase.
-* ✅ **Completed:** Homepage UI, Responsive Navigation, Product Grid Layout.
-* 🔄 **In Progress:** Shopping Cart State Management (Context API), Checkout Integration.
-* 🔜 **Roadmap:** Backend integration for real-time inventory management.
+A modern, responsive **e-commerce frontend** for a skateboarding brand. The focus is a clean,
+component-based **React architecture** with strict **TypeScript** typing — a fast, maintainable storefront
+with product browsing, filtering, and a cart/checkout flow.
 
 ## 🛠️ Tech Stack
 
-* **Framework:** React (Vite)
-* **Language:** TypeScript (for strict type checking and scalability)
-* **Styling:** Tailwind CSS (Utility-first design)
-* **Deployment:** Netlify (CI/CD auto-deployment)
-* **State Management:** React Hooks / Context API
+| Area | Technology |
+| :--- | :--- |
+| **Framework** | React (Vite) |
+| **Language** | TypeScript |
+| **Styling** | Tailwind CSS |
+| **Routing** | React Router |
+| **Icons** | lucide-react |
+| **Deployment** | Netlify (CI/CD auto-deploy) |
 
 ## ✨ Key Features
 
-* **Responsive Design:** Fully optimized for mobile, tablet, and desktop experiences.
-* **Modern UI/UX:** Minimalist design focusing on product visuals and ease of navigation.
-* **Component Architecture:** Reusable UI components (Buttons, Cards, Modals) to ensure code maintainability.
-* **Fast Loading:** Optimized build using Vite for near-instant page loads.
+* **Responsive design** — optimized for mobile, tablet, and desktop.
+* **Component architecture** — reusable, typed UI components for maintainability.
+* **Client-side routing** — smooth navigation with React Router.
+* **Fast builds** — Vite for near-instant dev server and optimized production bundles.
+
+## 🚧 Status
+
+Active development (alpha). UI, navigation, and product browsing are in place; cart/checkout flow is
+being expanded.
 
 ## 🚀 Getting Started
 
-If you want to run this project locally to test the features:
-
-1.  **Clone the repository**
-    ```bash
-    git clone [https://github.com/AmirMasnavi/skateboard.git](https://github.com/AmirMasnavi/skateboard.git)
-    cd skateboard
-    ```
-
-2.  **Install dependencies**
-    ```bash
-    npm install
-    ```
-
-3.  **Run the development server**
-    ```bash
-    npm run dev
-    ```
+```bash
+git clone https://github.com/AmirMasnavi/skateboard.git
+cd skateboard/skateboard-shop
+npm install
+npm run dev
+```
 
 ## 📬 Contact
-
 * **LinkedIn:** [Amir Masnavi](https://www.linkedin.com/in/amir-masnavi-b1ab61293/)
 * **Portfolio:** [AmirMasnavi.github.io](https://amirmasnavi.github.io/)
